@@ -9,10 +9,13 @@
 int main(void) {
 
 int = escolha;
-//’1’ = Criação de pastas
-//’2’ = Remoção de arquivos individuais
-//’3’ = Copia de arquivos de uma pasta para a outra
-
+//'1' = Criação de pastas
+//'2' = Remoção de arquivos individuais
+//'3' = Copia de arquivos de uma pasta para a outra
+//'4' = Mover arquivos de um pasta para outra
+//'5' = Exibir informações sobre um arquivo
+//'6' = Exibir informações sobre pastas
+//'7' = Lista arquivos e diretorios dentro de uma pasta dada
 
 
 printf (“Digite a sua escolha para utilização do programa: \n\n”+ escolha)
