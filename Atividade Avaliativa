@@ -1,0 +1,223 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 100
+#include <iostream>
+#include <conio.h>
+#include <locale.h>
+
+int main(void) {
+
+int = escolha;
+//’1’ = Criação de pastas
+//’2’ = Remoção de arquivos individuais
+//’3’ = Copia de arquivos de uma pasta para a outra
+
+
+
+printf (“Digite a sua escolha para utilização do programa: \n\n”+ escolha)
+
+if (escolha == ‘1’) {  //CRIAÇÃO DE PASTAS
+
+	//comando de regionalização
+	setlocale(LC_ALL, “portuguese”);
+	//titulo do programa
+	setConsoleTitle(“Criando pastas”);
+
+	//system (“mkdir iron”);
+	
+	//NOME DO ARQUIVO / SEGURANÇA
+	if (CreateDirectory (“Aulas”, NULL)) {
+		printf (“Pasta criada com sucesso!\n\n”)
+	}
+	else
+	{
+		printf (“Erro ao criar a pasta.\n\n”)
+	}
+
+	//system (“copy NUL iron\\texto.txt”);
+
+	//NOME DO ARQUIVO / TIPO DE ACESSO / COMPARTILHAMENTO / SEGURANÇA / TIPO DE CRIAÇÃO DO ARQUIVO / ATRIBUTOS / TEMPLATE PARA ARQUIVO
+	if (CreateFile (“iron/texto.txt”, GENERIC_READ, 0 , NULL , CREATE_NEW , FILE_ATTRIBUTE_NORMAL , NULL)) {
+		printf (“Arquivo criado com sucesso!\n\n”);
+	}
+	else
+	{
+		printf(“Erro ao criar o arquivo.\n\n”);
+	}
+
+
+if (escolha == ‘2’) {  //REMOÇÃO DE ARQUIVOS INDIVIDUAIS
+
+FILE * file = (“texto.txt”, “r”);
+
+	if ( file ) {
+		fclose(file);
+		printf(“Removido”);
+		remove(“cadastro.txt”);
+		return 1;
+
+	}else{
+		printf(“Não existe nenhum cadastro.txt”);
+	}
+	getchar();
+	return 0;
+}
+
+
+if (escolha == ‘3’) {  //COPIA DE ARQUIVOS  DE UM PROGRAMA PARA O OUTRO
+
+char *p;
+char linha[MAX];
+FILE *arq;
+
+	if ((arq = fopen(“texto.txt”, “r”))) {
+	if (! arq) {
+		perror(“Erro ao abrir arquivo”);
+		getch();
+		return -1;
+	}
+
+	while (fgets(linha, MAX, arq)) {
+	//Tira o \n da linha do arquivo se ele existir
+
+	if ((p = strchr(linha,’\n’)))
+		*p = ‘\0’;
+	if (linha [strlen(linha)) -1] == ‘1’) {
+		printf(“Faz o que tem que fazer se o numero for 1\n”)
+	}else
+	if (linha [strchr(linha) -1] == ‘0’) {
+		printf(“Faz o que tem que fazer se o numero for 0\n”);
+	}
+	
+	if ((p = strrchr(linha,””)))
+		*++p = ‘\n’;
+		printf(“%\n\n,linha”);
+	}
+	fclose(arq);
+	}
+
+
+
+	getch();
+	return 0;
+	}
+
+
+if (escolha == ‘4’) {  //MOVER ARQUIVOS DE UMA PASTA PARA OUTRA
+
+private void CriaPastaFarmInterna() {
+	string patch_trabalho = ConfigurationManager.AppSettings[“Target_Dir_Temp”];
+	string novo_patch = patch_trabalho + “\\FarmInterna”;
+
+DirectoryInfo dirInfo = new DiretoryInfo(novo_patch);
+
+	if (dirInfo.Exists == false)
+		directory.CreateDirectory(novo_patch);
+	
+		List<String>myFiles = Directory.GetFiles(patch_trabalho, “*,*”, 	SearchOption.AllDirectories).ToList();
+	
+	foreach (string file in myFiles) {
+	
+		FileInfo mFile = new FileInfo(file);
+	
+	if (new FileInfo(dirInfo + “\\” + mFile.nome).Exists == false)
+		mFile.MoveTo(dirInfo + “\\” + mFile.name);
+	}
+}
+}
+
+
+if (escolha == ‘5’) {  //EXIBIR INFORMAÇÕES SOBRE UM ARQUIVOS
+
+string = sigla;
+
+DC  //DATA DA CRIAÇÃO
+DUM  //DATA DA ULTIMA MODIFICAÇÃO
+UDA  //USUÁRIO DONO DO ARQUIVO
+PA  //PERMISSÕES DO ARQUIVO
+
+printf (“Digite a sigla para fazer a consulta”);
+
+if (sigla == ‘DC’) {
+printf (“Digite a data para a criação do arquivo: “);
+read(DC);
+printf (“A data de criação do arquivo é de: ”+DC)
+}
+if (sigla == ‘DUM’) {
+printf (“Digite a data que o arquivo foi modificado: ”);
+read(DUM);
+printf (“A data de modificação do arquivo é de: ”+DUM);
+}
+
+if (sigla == ‘UDA’) {
+printf (“Digite o nome do usuário dono do arquivo: ”);
+read(UDA);
+printf (“O nome do usuário dono do arquivo é de: ”+UDA);
+}
+if (sigla == ‘PA’) {
+printf (“Digite a sua permissão para entrar no arquivo: ”);
+read(PA);
+	if (PA == ‘TRUE’){
+		printf (“A sua permissão para entrar no arquivo é valida”);
+	}else{
+		printf (“A sua permissão para entrar no arquivo está errada”);
+	
+}
+
+
+if (escolha == ‘6’) {  //EXIBIR INFORMAÇÕES SOBRE PASTAS
+
+string = Sigla;
+
+DC  //DATA DA CRIAÇÃO
+DUM  //DATA DA ULTIMA MODIFICAÇÃO
+UDP  //USUÁRIO DONO DA PASTA
+PP  //PERMISSÕES DA PASTA
+
+printf (“Digite a sigla para fazer a consulta”);
+
+if (Sigla == ‘DC’) {
+printf (“Digite a data para a criação da pasta: “);
+read(DC);
+printf (“A data de criação da pasta é de: ”+DC)
+}
+if (Sigla == ‘DUM’) {
+printf (“Digite a data que a pasta foi modificada: ”);
+read(DUM);
+printf (“A data de modificação da pasta é de: ”+DUM);
+}
+
+if (Sigla == ‘UDP’) {
+printf (“Digite o nome do usuário dono da pasta: ”);
+read(UDP);
+printf (“O nome do usuário dono da pasta é de: ”+UDP);
+}
+if (Sigla == ‘PP’) {
+printf (“Digite a sua permissão para entrar na pasta: ”);
+read(PP);
+	if (PP == ‘TRUE’){
+		printf (“A sua permissão para entrar na pasta é valida”);
+	}else
+		printf (“A sua permissão para entrar na pasta está errada”);
+	
+}
+if (escolha == ‘7’) {  //LISTA ARQUIVOS E DIRETÓRIOS DENTRO DE UMA PASTA DADA
+
+struct dirent **namelist;
+int n;
+
+n = scandir(“.”, &namelist, 0, alphasort);
+	if (n < 0)
+		perror(“scandir”);
+	else{
+		while(n--) {
+			printf (“%s\n”, namelist[n]→d_name);
+			free(namelist[n]);
+
+		}
+
+	free(namelist);
+	}
+}
+}
